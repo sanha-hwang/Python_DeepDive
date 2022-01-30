@@ -239,6 +239,119 @@ Quiz2) 당신은 최근에 코딩 스터디 모임을 새로 만들었습니다.
 
 # 방법3 (v3.6 이상~)
 
-age =20
-color ="빨간"
-print(f"나는 {age}살이며, {color}색을 좋아해요.")#변수를 그대로 들고 올 수 있음
+# age =20
+# color ="빨간"
+# print(f"나는 {age}살이며, {color}색을 좋아해요.")#변수를 그대로 들고 올 수 있음
+
+'''탈출 문자'''
+# print("백문이 불여일견 \n 백견이 불여일타")
+
+# # 저는 "나도코딩"입니다.
+# # print("저는 "나도코딩"입니다")
+# print('저는 "나도코딩"입니다')
+# print("저는 \"나도코딩\"입니다")
+
+# # \\: 문장 내에서 \
+# print("C:\\Users\\pc\\나도코딩")
+
+# # \r : 커서를 맨 앞으로 이동
+# print("Red Apple\rPine")
+
+# # \b : 백스페이스 (한 글자 삭제)
+# print("Redd\bApple")
+
+# # \t : 탭
+# print("Red\tApple")
+
+'''
+Quiz3) 사이트별로 비밀번호를 만들어 주는 프로그램을 작성하시오
+
+예) http://naver.com
+규칙1 : http:// 부분은 제외 => naver.com
+규칙2 : 처음 만나는 점(.) 이후 부분은 제외 => naver
+규칙3 : 남은 글자 중 처음 세자리 + 글자 갯수 + 글자 내 'e' 갯수 + "!" 로 구성
+
+예) 생성된 비밀번호 :nav51!
+'''
+# 내 방법
+# string = "http://naver.com"
+# n_index = string.index("n")
+# dot_index = string.find(".")
+
+# sorting_string = string[n_index:dot_index]
+# password = sorting_string[:3] + str(len(sorting_string)) + str(sorting_string.count("e")) +"!"  
+# print(password)
+
+# 나도코딩 방법
+# url = "http://naver.com"
+# my_str = url.replace("http://","") # 규칙1
+# print(my_str)
+# my_str = my_str[:my_str.index(".")] #규칙2
+# print(my_str)
+# password = my_str[:3] + str(len(my_str)) + str(my_str.count("e")) + "!"
+# print("{0}의 비밀번호는 {1}입니다.".format(url, password))
+
+# 리스트 []
+
+# 지하철 칸별로 10명, 20명, 30명
+
+# subway1 =10
+# subway2 =20
+# subway3 =30
+
+# subway = [10,20,30]
+# print(subway)
+
+# name = ["유재석", "조세호", "박명수"]
+
+# #조세호씨가 몇번째 칸에 타고 있는가?
+
+# print(name.index("조세호"))
+
+# name.append("하하")
+# print(name)
+
+# name.insert(1,"정형돈")
+# print(name)
+
+# #지하철에 있는 사람을 한 명씩 뒤에서 꺼냄
+
+# print(name.pop())
+# print(name)
+
+# print(name.pop())
+# print(name)
+
+# print(name.pop())
+# print(name)
+
+# print(name.pop())
+# print(name)
+
+#같은 이름의 사람이 몇 명 있는지 확인
+# name.append("유재석")
+# print(name)
+
+# print(name.count("유재석"))
+
+# 정렬도 가능 
+
+# num_list = [5,2,4,3,1]
+# num_list.sort()
+# print(num_list)
+
+# num_list.reverse()
+# print(num_list)
+
+# num_list.clear()
+# print(num_list)
+
+# num_list = [5,2,4,3,1]
+
+# mix_list = ["유재석", 20, True]
+# print(mix_list)
+
+# num_list.extend(mix_list)
+# print(num_list)
+
+'''사전형 자료형'''
