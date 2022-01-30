@@ -141,9 +141,9 @@ Quiz7) 당신의 회사에서는 매주 1회 작성해야 하는 보고서가 �
 
 '''
 
-for i in range(1,51):
-    with open("{}주차.txt".format(str(i)), "w", encoding="utf8") as file:
-        file.write("- {} 주차 주간보고 -".format(i))
-        file.write("\n부서 : ")
-        file.write("\n이름 : ")
-        file.write("\n업무요약 : ")
+# for i in range(1,51):
+#     with open("{}주차.txt".format(str(i)), "w", encoding="utf8") as file:
+#         file.write("- {} 주차 주간보고 -".format(i))
+#         file.write("\n부서 : ")
+#         file.write("\n이름 : ")
+#         file.write("\n업무요약 : ")
