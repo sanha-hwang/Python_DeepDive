@@ -200,23 +200,45 @@ Quiz2) 당신은 최근에 코딩 스터디 모임을 새로 만들었습니다.
 
 '''문자열 처리 함수'''
 
-python = "Python is Amazing"
-print(python.lower()) # 전체 소문자
-print(python.upper()) # 전체 대문자
-print(python[0].isupper()) # 0번째 문자가 대문자이니?
-print(len(python)) #python의 문자열 길이
-print(python.replace("Python", "Java")) #문자열 변환
+# python = "Python is Amazing"
+# print(python.lower()) # 전체 소문자
+# print(python.upper()) # 전체 대문자
+# print(python[0].isupper()) # 0번째 문자가 대문자이니?
+# print(len(python)) #python의 문자열 길이
+# print(python.replace("Python", "Java")) #문자열 변환
 
-index = python.index("n")
-print(index) # 문자의 위치 index값 반환 
+# index = python.index("n")
+# print(index) # 문자의 위치 index값 반환 
 
-index = python.index("n", index + 1) # n중에 다음 번째 n 찾아줌
-print(index) # 문자의 위치 index값 반환 
+# index = python.index("n", index + 1) # n중에 다음 번째 n 찾아줌
+# print(index) # 문자의 위치 index값 반환 
 
-print(python.find("Java")) # 원하는 값이 없으면 -1 값 반환 프로그램은 계속 진행
-# print(python.index('java')) # error가 뜨면서 프로그램 종료
-print("hi")
+# print(python.find("Java")) # 원하는 값이 없으면 -1 값 반환 프로그램은 계속 진행
+# # print(python.index('java')) # error가 뜨면서 프로그램 종료
+# print("hi")
 
-print(python.count("n")) #n이라는 문자가 몇번나왔는지 확인
+# print(python.count("n")) #n이라는 문자가 몇번나왔는지 확인
 
 """문자열 포맷"""
+
+# #방법1 :  %를 활용
+# print("나는 %d살입니다."%20) #d는 정수
+# print("나는 %s을 좋아합니다. "%"파이싼") #s는 문자열
+# print("Apple은 %c로 시작해요."%"A") #c는 문자 하나
+
+# print("나는 %s색과 %s색을 좋아해여" %("파란", "빨간"))
+
+# #방법2 : format함수
+# print("나는 {}살입니다.".format(20))
+# print("나는 {}색과 {}색을 좋아해.".format("파란", '빨간'))
+
+# print("나는 {0}색과 {1}색을 좋아해.".format("파란", '빨간')) #index로 순서를 바꿀 수도 있음
+# print("나는 {1}색과 {0}색을 좋아해.".format("파란", '빨간'))
+
+# print("나는 {age}살이며 {color}색을 좋아해.".format(age =20, color = '빨간')) # 변수로 지정해줄 수 있음
+
+# 방법3 (v3.6 이상~)
+
+age =20
+color ="빨간"
+print(f"나는 {age}살이며, {color}색을 좋아해요.")#변수를 그대로 들고 올 수 있음
