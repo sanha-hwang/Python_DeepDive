@@ -291,6 +291,7 @@ Quiz3) 사이트별로 비밀번호를 만들어 주는 프로그램을 작성�
 # password = my_str[:3] + str(len(my_str)) + str(my_str.count("e")) + "!"
 # print("{0}의 비밀번호는 {1}입니다.".format(url, password))
 
+'''리스트'''
 # 리스트 []
 
 # 지하철 칸별로 10명, 20명, 30명
@@ -355,3 +356,172 @@ Quiz3) 사이트별로 비밀번호를 만들어 주는 프로그램을 작성�
 # print(num_list)
 
 '''사전형 자료형'''
+
+# cabinet = {3: "유재석", 100 : "김태호"}
+# print(cabinet)
+# print(cabinet[3])
+# print(cabinet[100])
+
+# print(cabinet.get(3))
+
+# # print(cabinet[5]) # 오류나고 프로그램 종료
+# # print("hi")
+
+# print(cabinet.get(5)) # None값 반환하고 프로그램 진행
+# print("hi")
+
+
+# print(cabinet.get(5,"사용가능")) # 뒤에 문자열값(사용가능) 반환하고 프로그램 진행
+# print("hi")
+
+# print(3 in cabinet) # key값에 3이 있니
+# print(5 in cabinet)
+
+# cabinet = {"A-3": "유재석", "B-100":"김태호"}
+# print(cabinet["A-3"])
+# print(cabinet["B-100"])
+
+# #새손님
+# print(cabinet)
+
+# cabinet["A-30"] = "김종국"
+# cabinet["C-20"] = "조세호"
+
+# print(cabinet)
+
+# cabinet["A-3"] = "김종국"
+# print(cabinet)
+
+# # 간 손님
+
+# del cabinet['A-3']
+# print(cabinet)
+
+# # key 들만 출력
+# print(cabinet.keys())
+
+# # value들만 출력
+# print(cabinet.values())
+
+# # key, value 둘다 출력
+# print(cabinet.items())
+
+# # 목욕탕 폐점
+# cabinet.clear()
+# print(cabinet)
+
+# '''튜플'''
+
+# # 변경하지 않는 자료형
+
+# menu = ("돈까스", "치즈까스")
+# print(menu[0])
+# print(menu[1])
+
+# #menu.add("생선까스") # add를 지원하지 않음
+
+# name, age, hobby = "김종국", 20, "코딩"
+# print(name,age, hobby)
+
+# '''세트 - 집합'''
+
+# #중복이 안되고, 순서가 없음
+
+# my_set = {1,2,3,3,3}
+# print(my_set)
+
+# java = {"유재석", "김태호", "양세형"}
+# python = set(["유재석", '박명수'])
+
+# #교집합 
+# print(java & python)
+# print(java.intersection(python))
+
+# #합집합
+
+# print(java | python)
+# print(java.union(python))
+
+# #차집합 (java 가능 python 불가능 개발자)
+# print(java - python)
+# print(java.difference(python))
+
+# #python 할줄 아는 사람 늘어나
+
+# python.add("김태호")
+# print(python)
+
+# #java를 잊엇어요
+# python.remove("김태호")
+# print(python)
+
+'''자료 구조의 변경'''
+
+# menu = {"커피", "우유","주스"}
+# print(menu, type(menu))
+
+# menu = list(menu)
+# print(menu, type(menu))
+
+# menu = tuple(menu)
+# print(menu, type(menu))
+
+# menu = set(menu)
+# print(menu, type(menu))
+
+'''
+Quiz4) 당신의 학교에서는 파이썬 코딩 대회를 주최합니다.
+참석률을 높이기 위해 댓글 이벤트를 진행하기로 하였습니다.
+댓글 작성자들 중에 추첨을 통해 1명은 치킨, 3명은 커피 쿠폰을 받게 됩니다.
+
+조건1: 편의상 댓글은 20명이 작성하였고, 아이디는 1~20 이라고 가정
+조건2: 댓글 내용과 상관없이 무작위로 추첨하되 중복불가
+조건3: random 모듈의 shuffle 과 sample을 활용
+
+(출력예제)
+--당첨자 발표--
+치킨 당첨자 : 1
+커피 당첨자:[2,3,4]
+--축하합니다--
+'''
+
+#(활용예제)
+
+# from random import *
+
+# lst = [ 1,2,3,4,5]
+# print(lst)
+# shuffle(lst)
+# print(lst)
+# print(sample(lst,1))
+
+# 내방법
+# from random import *
+
+# list = list(range(1,21))
+# shuffle(list)
+# chi = list.pop()
+# shuffle(list)
+# coffee = sample(list,3)
+# # print(chi, coffee)
+
+# print("-- 당첨자 발표 --\n치킨 당첨자 : {}\n커피 당첨자 : {}\n--축하합니다--".format(chi, coffee))
+
+# 나도코딩 방법
+
+from random import *
+
+users =range(1,21)
+# print(type(users))
+users = list(users)
+# print(type(users))
+print(users)
+shuffle(users)
+print(users)
+
+winners =sample(users,4)
+
+print("-- 당첨자 발표 --")
+print("치킨 당첨자 : {0}".format(winners[0]))
+print("커피 당첨자 : {0}".format(winners[1:]))
+print("-- 축하합니다. --")
