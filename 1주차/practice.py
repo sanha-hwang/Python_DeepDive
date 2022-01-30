@@ -173,6 +173,50 @@ Quiz2) 당신은 최근에 코딩 스터디 모임을 새로 만들었습니다.
 오프라인 스터디 모임 날짜는 매월 X일로 선정되었습니다.
 
 '''
-from random import *
-study = randint(4,28)
-print("오프라인 스터디 모임 날자는 매월", str(study) +"일로 선정되었습니다.")
+# from random import *
+# study = randint(4,28)
+# print("오프라인 스터디 모임 날자는 매월", str(study) +"일로 선정되었습니다.") 
+
+'''문자열'''
+# sentence = '나는 소년입니다'
+# print(sentence)
+# sentence2 = "파이썬은쉬워요"
+# print(sentence2)
+# sentence3 = """
+# 나는 소년이고, 파이썬은 쉬워요
+# """
+# print(sentence3)
+
+# jumin = "990120-1234567"
+
+# print("성별 : "+jumin[7])
+# print("연 : "+jumin[0:2])
+# print("월 : "+jumin[2:4])
+# print("일 : "+jumin[4:6])
+# print("생년월일 : "+jumin[:6]) #처음부터 6직전까지
+# print("뒤 7자리 : "+jumin[7:]) #7부터 끝까지
+
+# print("뒤 7자리(뒤에부터) : "+jumin[-7:]) #맨 뒤에서 7번째부터 끝까지
+
+'''문자열 처리 함수'''
+
+python = "Python is Amazing"
+print(python.lower()) # 전체 소문자
+print(python.upper()) # 전체 대문자
+print(python[0].isupper()) # 0번째 문자가 대문자이니?
+print(len(python)) #python의 문자열 길이
+print(python.replace("Python", "Java")) #문자열 변환
+
+index = python.index("n")
+print(index) # 문자의 위치 index값 반환 
+
+index = python.index("n", index + 1) # n중에 다음 번째 n 찾아줌
+print(index) # 문자의 위치 index값 반환 
+
+print(python.find("Java")) # 원하는 값이 없으면 -1 값 반환 프로그램은 계속 진행
+# print(python.index('java')) # error가 뜨면서 프로그램 종료
+print("hi")
+
+print(python.count("n")) #n이라는 문자가 몇번나왔는지 확인
+
+"""문자열 포맷"""
