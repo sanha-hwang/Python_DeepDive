@@ -298,82 +298,119 @@
 # game_over()
 
 '''super'''
-class Unit:
-    def __init__(self, name, hp, speed):
-        self.name = name # 멤버변수들
-        self.hp = hp
-        self.speed = speed
+# class Unit:
+#     def __init__(self, name, hp, speed):
+#         self.name = name # 멤버변수들
+#         self.hp = hp
+#         self.speed = speed
     
-    def move(self, location):
-        print("[지상 유닛 이동]")
-        print("{} : {} 방향으로 이동합니다. [속도 {}]".format(self.name, location, self.speed))
+#     def move(self, location):
+#         print("[지상 유닛 이동]")
+#         print("{} : {} 방향으로 이동합니다. [속도 {}]".format(self.name, location, self.speed))
         
-# 공격 유닛
-class AttackUnit(Unit):
-    def __init__(self, name, hp, speed, damage):
-        Unit.__init__(self, name, hp, speed)
-        self.damage=damage
+# # 공격 유닛
+# class AttackUnit(Unit):
+#     def __init__(self, name, hp, speed, damage):
+#         Unit.__init__(self, name, hp, speed)
+#         self.damage=damage
 
-    def attack(self, location):
-        print("{} : {} 방향으로 적군을 공격합니다. [공격력 {}"\
-            .format(self.name, location, self.damage))
+#     def attack(self, location):
+#         print("{} : {} 방향으로 적군을 공격합니다. [공격력 {}"\
+#             .format(self.name, location, self.damage))
 
-    def damaged(self, damage):
-        print("{} : {} 데미지를 입엇습니다.".format(self.name, damage))
-        self.hp -= damage
-        print("{} : 현재 체력은 {}입니다.".format(self.name, self.hp))
-        if self.hp <= 0:
-            print("{} : 파괴되엇습니다.".format(self.name))
+#     def damaged(self, damage):
+#         print("{} : {} 데미지를 입엇습니다.".format(self.name, damage))
+#         self.hp -= damage
+#         print("{} : 현재 체력은 {}입니다.".format(self.name, self.hp))
+#         if self.hp <= 0:
+#             print("{} : 파괴되엇습니다.".format(self.name))
 
-# 드랍쉽 : 공중 유닛, 수송기, 마린 / 파이어뱃/ 탱크 등을 수송, 공격 X
+# # 드랍쉽 : 공중 유닛, 수송기, 마린 / 파이어뱃/ 탱크 등을 수송, 공격 X
 
-# 날 수 있는 기능을 가진 클래스
-class Flyable:
-    def __init__(self, flying_speed):
-        self.flying_speed = flying_speed
+# # 날 수 있는 기능을 가진 클래스
+# class Flyable:
+#     def __init__(self, flying_speed):
+#         self.flying_speed = flying_speed
 
-    def fly(self, name, location):
-        print("{} : {} 방향으로 날아갑니다. [속도 {}]"\
-            .format(name, location, self.flying_speed))
+#     def fly(self, name, location):
+#         print("{} : {} 방향으로 날아갑니다. [속도 {}]"\
+#             .format(name, location, self.flying_speed))
 
-# 공중 공격 유닛 클래스
+# # 공중 공격 유닛 클래스
 
-class FlyableAttackUnit(AttackUnit, Flyable):
-    def __init__(self, name, hp, damage, flying_speed):
-        AttackUnit.__init__(self, name, hp,0, damage)
-        Flyable.__init__(self, flying_speed)
+# class FlyableAttackUnit(AttackUnit, Flyable):
+#     def __init__(self, name, hp, damage, flying_speed):
+#         AttackUnit.__init__(self, name, hp,0, damage)
+#         Flyable.__init__(self, flying_speed)
 
-    def move(self, location):
-        print("[공중 유닛 이동]")
-        self.fly(self.name, location)
+#     def move(self, location):
+#         print("[공중 유닛 이동]")
+#         self.fly(self.name, location)
 
-class BuildingUnit(Unit):
-    def __init__(self, name, hp, location):
-        # Unit.__init__(self, name, hp,0)
-        super().__init__(name, hp,0) # self없이 상속받기 but  다중상속일 때 문제가 생김
+# class BuildingUnit(Unit):
+#     def __init__(self, name, hp, location):
+#         # Unit.__init__(self, name, hp,0)
+#         super().__init__(name, hp,0) # self없이 상속받기 but  다중상속일 때 문제가 생김
+#         self.location = location
+# # 서플라이 디폿 : 건물, 1개 건물 = 8 유닛.
+# supplt_depot = BuildingUnit("서플라이 디폿", 500, "7시")
+
+# def game_start():
+#     print("[알림] 새로운 게임을 시작합니다.")
+
+# def game_over():
+#     pass
+
+# game_start()
+# game_over()
+
+# class Unit:
+#     def __init__(self):
+#         print("Unit 생성자")
+
+# class Flyable:
+#     def __init__(self):
+#         print("Flyable 생성자")
+
+# class FlyableUnit(Unit, Flyable):
+#     def __init__(self):
+#         # super().__init__()  # 맨 처음의 상속 받는 class의 init 불러옴
+#         Unit.__init(self)
+#         Flyable.__init__(self)
+
+'''
+Quiz9) 주어진 코드를 활용하여 부동산 프로그램을 작성하시오.
+
+(출력 예제)
+총 3대의 매물이 있습니다.
+강남 아파트 매매 10억 2010년
+마포 오피스텔 전세 5억 2007년
+송파 빌라 월세 500/50 2000년
+
+'''
+
+class House:
+    # 매물 초기화
+    def __init__(self, location, house_type, deal_type, price, completion_year):
         self.location = location
-# 서플라이 디폿 : 건물, 1개 건물 = 8 유닛.
-supplt_depot = BuildingUnit("서플라이 디폿", 500, "7시")
+        self.house_type = house_type
+        self.deal_type = deal_type
+        self.price = price
+        self.completion_year = completion_year
+    
+    def show_detail(self):
+        print("{0} {1} {2} {3} {4}".format(self.location, self.house_type, self.deal_type, \
+            self.price, self.completion_year))
+        
+houses = []
+house1 = House("강남", "아파트", "매매", "10억", "2010년")
+house2 = House("마포", "오피스텔", "전세", "5억", "2007년")
+house3 = House("송파", "빌라", "월세", "500/50", "2010년")
 
-def game_start():
-    print("[알림] 새로운 게임을 시작합니다.")
+houses.append(house1)
+houses.append(house2)
+houses.append(house3)
 
-def game_over():
-    pass
-
-game_start()
-game_over()
-
-class Unit:
-    def __init__(self):
-        print("Unit 생성자")
-
-class Flyable:
-    def __init__(self):
-        print("Flyable 생성자")
-
-class FlyableUnit(Unit, Flyable):
-    def __init__(self):
-        # super().__init__()  # 맨 처음의 상속 받는 class의 init 불러옴
-        Unit.__init(self)
-        Flyable.__init__(self)
+print("총 {}대의 매물이 있습니다.".format(len(houses)))
+for h in houses:
+    h.show_detail()
